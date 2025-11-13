@@ -1,0 +1,40 @@
+# Changes here will be overwritten by Copier
+AddAllcontributors: true
+AddCitationCFF: true
+AddCodeOfConduct: true
+AddCompatHelperCI: true
+AddContributionDocs: true
+AddCopierCI: false
+AddDependabot: true
+AddDocs: true
+AddDocsCI: true
+AddFormatterAndLinterConfigFiles: true
+AddGitHubPRTemplate: true
+AddGitHubTemplates: true
+AddLintCI: true
+AddLychee: true
+AddMacToCI: false
+AddPrecommit: true
+AddTagBotCI: true
+AddTestCI: true
+AddWinToCI: false
+Authors: Uwe Hernandez Acosta <u.hernandez@hzdr.de>
+AutoIncludeTests: true
+CheckExplicitImports: false
+CodeOfConductContact: u.hernandez@hzdr.de
+ConfigIndentation: 2
+JuliaIndentation: 4
+JuliaMinCIVersion: lts
+JuliaMinVersion: '1.10'
+License: MIT
+LicenseCopyrightHolders: Uwe Hernandez Acosta
+MarkdownIndentation: 2
+PackageName: MatterModels
+PackageOwner: JuliaXRTS
+PackageUUID: 89b7eb7d-0b8d-5078-86d5-4a0f481f2984
+RunJuliaNightlyOnCI: false
+StrategyConfirmIncluded: true
+StrategyLevel: 3
+StrategyReviewExcluded: true
+UseCirrusCI: false
+_src_path: /Users/uwe/.julia/packages/BestieTemplate/jdG8v

@@ -1,0 +1,7 @@
+name = "MatterModels"
+uuid = "89b7eb7d-0b8d-5078-86d5-4a0f481f2984"
+authors = ["Uwe Hernandez Acosta <u.hernandez@hzdr.de>"]
+version = "0.1.0"
+
+[compat]
+julia = "1.10"
