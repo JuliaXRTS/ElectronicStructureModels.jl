@@ -1,3 +1,3 @@
-@testset "MatterModels.jl" begin
-    @test MatterModels.hello_world() == "Hello, World!"
+@testset "ElectronicStructureModels.jl" begin
+    @test ElectronicStructureModels.hello_world() == "Hello, World!"
 end

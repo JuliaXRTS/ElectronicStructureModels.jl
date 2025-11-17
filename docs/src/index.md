@@ -1,10 +1,10 @@
 ```@meta
-CurrentModule = MatterModels
+CurrentModule = ElectronicStructureModels
 ```
 
-# MatterModels
+# ElectronicStructureModels
 
-Documentation for [MatterModels](https://github.com/JuliaXRTS/MatterModels.jl).
+Documentation for [ElectronicStructureModels](https://github.com/JuliaXRTS/ElectronicStructureModels.jl).
 
 ## Contributors
 

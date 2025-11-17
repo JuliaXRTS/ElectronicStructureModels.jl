@@ -1,14 +1,14 @@
 # [Developer documentation](@id dev_docs)
 
 !!! note "Contributing guidelines"
-    If you haven't, please read the [Contributing guidelines](90-contributing.md) first.
+If you haven't, please read the [Contributing guidelines](90-contributing.md) first.
 
 If you want to make contributions to this package that involves code, then this guide is for you.
 
 ## First time clone
 
 !!! tip "If you have writing rights"
-    If you have writing rights, you don't have to fork. Instead, simply clone and skip ahead. Whenever **upstream** is mentioned, use **origin** instead.
+If you have writing rights, you don't have to fork. Instead, simply clone and skip ahead. Whenever **upstream** is mentioned, use **origin** instead.
 
 If this is the first time you work with this repository, follow the instructions below to clone the repository.
 
@@ -17,7 +17,7 @@ If this is the first time you work with this repository, follow the instructions
 3. Add this repo as a remote:
 
    ```bash
-   git remote add upstream https://github.com/JuliaXRTS/MatterModels.jl
+   git remote add upstream https://github.com/JuliaXRTS/ElectronicStructureModels.jl
    ```
 
 This will ensure that you have two remotes in your git: `origin` and `upstream`.
@@ -103,7 +103,7 @@ We try to keep a linear history in this repo, so it is important to keep your br
 
 ### Commit message
 
-- Use imperative or present tense, for instance: *Add feature* or *Fix bug*.
+- Use imperative or present tense, for instance: _Add feature_ or _Fix bug_.
 - Have informative titles.
 - When necessary, add a body with details.
 - If there are breaking changes, add the information to the commit message.
@@ -111,7 +111,7 @@ We try to keep a linear history in this repo, so it is important to keep your br
 ### Before creating a pull request
 
 !!! tip "Atomic git commits"
-    Try to create "atomic git commits" (recommended reading: [The Utopic Git History](https://blog.esciencecenter.nl/the-utopic-git-history-d44b81c09593)).
+Try to create "atomic git commits" (recommended reading: [The Utopic Git History](https://blog.esciencecenter.nl/the-utopic-git-history-d44b81c09593)).
 
 - Make sure the tests pass.
 - Make sure the pre-commit tests pass.
@@ -149,7 +149,7 @@ To create a new release, you can follow these simple steps:
   - Add a new link in the bottom for version "x.y.z"
   - Change the "[unreleased]" link to use the latest version - end of line, `vx.y.z ... HEAD`.
 - Create a commit "Release vx.y.z", push, create a PR, wait for it to pass, merge the PR.
-- Go back to main screen and click on the latest commit (link: <https://github.com/JuliaXRTS/MatterModels.jl/commit/main>)
+- Go back to main screen and click on the latest commit (link: <https://github.com/JuliaXRTS/ElectronicStructureModels.jl/commit/main>)
 - At the bottom, write `@JuliaRegistrator register`
 
 After that, you only need to wait and verify:
@@ -157,7 +157,7 @@ After that, you only need to wait and verify:
 - Wait for the bot to comment (should take < 1m) with a link to a PR to the registry
 - Follow the link and wait for a comment on the auto-merge
 - The comment should said all is well and auto-merge should occur shortly
-- After the merge happens, TagBot will trigger and create a new GitHub tag. Check on <https://github.com/JuliaXRTS/MatterModels.jl/releases>
+- After the merge happens, TagBot will trigger and create a new GitHub tag. Check on <https://github.com/JuliaXRTS/ElectronicStructureModels.jl/releases>
 - After the release is create, a "docs" GitHub action will start for the tag.
 - After it passes, a deploy action will run.
-- After that runs, the [stable docs](https://JuliaXRTS.github.io/MatterModels.jl/stable) should be updated. Check them and look for the version number.
+- After that runs, the [stable docs](https://JuliaXRTS.github.io/ElectronicStructureModels.jl/stable) should be updated. Check them and look for the version number.

@@ -1,23 +1,23 @@
-# MatterModels
+# ElectronicStructureModels
 
-[![Stable Documentation](https://img.shields.io/badge/docs-stable-blue.svg)](https://JuliaXRTS.github.io/MatterModels.jl/stable)
-[![Development documentation](https://img.shields.io/badge/docs-dev-blue.svg)](https://JuliaXRTS.github.io/MatterModels.jl/dev)
-[![Test workflow status](https://github.com/JuliaXRTS/MatterModels.jl/actions/workflows/Test.yml/badge.svg?branch=main)](https://github.com/JuliaXRTS/MatterModels.jl/actions/workflows/Test.yml?query=branch%3Amain)
-[![Coverage](https://codecov.io/gh/JuliaXRTS/MatterModels.jl/branch/main/graph/badge.svg)](https://codecov.io/gh/JuliaXRTS/MatterModels.jl)
-[![Lint workflow Status](https://github.com/JuliaXRTS/MatterModels.jl/actions/workflows/Lint.yml/badge.svg?branch=main)](https://github.com/JuliaXRTS/MatterModels.jl/actions/workflows/Lint.yml?query=branch%3Amain)
-[![Docs workflow Status](https://github.com/JuliaXRTS/MatterModels.jl/actions/workflows/Docs.yml/badge.svg?branch=main)](https://github.com/JuliaXRTS/MatterModels.jl/actions/workflows/Docs.yml?query=branch%3Amain)
+[![Stable Documentation](https://img.shields.io/badge/docs-stable-blue.svg)](https://JuliaXRTS.github.io/ElectronicStructureModels.jl/stable)
+[![Development documentation](https://img.shields.io/badge/docs-dev-blue.svg)](https://JuliaXRTS.github.io/ElectronicStructureModels.jl/dev)
+[![Test workflow status](https://github.com/JuliaXRTS/ElectronicStructureModels.jl/actions/workflows/Test.yml/badge.svg?branch=main)](https://github.com/JuliaXRTS/ElectronicStructureModels.jl/actions/workflows/Test.yml?query=branch%3Amain)
+[![Coverage](https://codecov.io/gh/JuliaXRTS/ElectronicStructureModels.jl/branch/main/graph/badge.svg)](https://codecov.io/gh/JuliaXRTS/ElectronicStructureModels.jl)
+[![Lint workflow Status](https://github.com/JuliaXRTS/ElectronicStructureModels.jl/actions/workflows/Lint.yml/badge.svg?branch=main)](https://github.com/JuliaXRTS/ElectronicStructureModels.jl/actions/workflows/Lint.yml?query=branch%3Amain)
+[![Docs workflow Status](https://github.com/JuliaXRTS/ElectronicStructureModels.jl/actions/workflows/Docs.yml/badge.svg?branch=main)](https://github.com/JuliaXRTS/ElectronicStructureModels.jl/actions/workflows/Docs.yml?query=branch%3Amain)
 [![DOI](https://zenodo.org/badge/DOI/FIXME)](https://doi.org/FIXME)
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](CODE_OF_CONDUCT.md)
-[![All Contributors](https://img.shields.io/github/all-contributors/JuliaXRTS/MatterModels.jl?labelColor=5e1ec7&color=c0ffee&style=flat-square)](#contributors)
+[![All Contributors](https://img.shields.io/github/all-contributors/JuliaXRTS/ElectronicStructureModels.jl?labelColor=5e1ec7&color=c0ffee&style=flat-square)](#contributors)
 [![BestieTemplate](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/JuliaBesties/BestieTemplate.jl/main/docs/src/assets/badge.json)](https://github.com/JuliaBesties/BestieTemplate.jl)
 
 ## How to Cite
 
-If you use MatterModels.jl in your work, please cite using the reference given in [CITATION.cff](https://github.com/JuliaXRTS/MatterModels.jl/blob/main/CITATION.cff).
+If you use ElectronicStructureModels.jl in your work, please cite using the reference given in [CITATION.cff](https://github.com/JuliaXRTS/ElectronicStructureModels.jl/blob/main/CITATION.cff).
 
 ## Contributing
 
-If you want to make contributions of any kind, please first that a look into our [contributing guide directly on GitHub](docs/src/90-contributing.md) or the [contributing page on the website](https://JuliaXRTS.github.io/MatterModels.jl/dev/90-contributing/)
+If you want to make contributions of any kind, please first that a look into our [contributing guide directly on GitHub](docs/src/90-contributing.md) or the [contributing page on the website](https://JuliaXRTS.github.io/ElectronicStructureModels.jl/dev/90-contributing/)
 
 ---
 

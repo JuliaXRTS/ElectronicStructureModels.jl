@@ -1,4 +1,4 @@
-using MatterModels
+using ElectronicStructureModels
 using Test
 
 #=

@@ -3,7 +3,7 @@ using Random
 using QuadGK
 using Unitful
 
-using MatterModels
+using ElectronicStructureModels
 
 include("checks.jl")
 
@@ -31,10 +31,10 @@ APPROXS = [NoApprox(), NonDegenerated(), Degenerated()]
 
 
 @testset "ne = $ne_ccm" for ne_ccm in NES_ccm
-    ne_internal = MatterModels._internalize_density(ne_ccm)
+    ne_internal = ElectronicStructureModels._internalize_density(ne_ccm)
 
-    KF = MatterModels._fermi_wave_vector(ne_internal)
-    EF = MatterModels._fermi_energy_from_kF(KF)
+    KF = ElectronicStructureModels._fermi_wave_vector(ne_internal)
+    EF = ElectronicStructureModels._fermi_energy_from_kF(KF)
     N0 = KF / (2 * pi^2)
 
     OMS = EF .* (0.0, rand(RNG), 1 + rand(RNG), 2 + rand(RNG), 3 + rand(RNG))
