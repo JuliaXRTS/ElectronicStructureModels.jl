@@ -5,7 +5,7 @@
 [deps]
 Documenter = "e30172f5-a6a5-5a46-863b-614d45cd2de4"
 LiveServer = "16fef848-5104-11e9-1b77-fb7a48bbb589"
-MatterModels = "89b7eb7d-0b8d-5078-86d5-4a0f481f2984"
+ElectronicStructureModels = "89b7eb7d-0b8d-5078-86d5-4a0f481f2984"
 
 [compat]
 Documenter = "1"

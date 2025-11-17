@@ -45,9 +45,9 @@ jobs:
         run: |
           julia --project=docs -e '
             using Documenter: DocMeta, doctest
-            using MatterModels
-            DocMeta.setdocmeta!(MatterModels, :DocTestSetup, :(using MatterModels); recursive=true)
-            doctest(MatterModels)'
+            using ElectronicStructureModels
+            DocMeta.setdocmeta!(ElectronicStructureModels, :DocTestSetup, :(using ElectronicStructureModels); recursive=true)
+            doctest(ElectronicStructureModels)'
       - name: Generate and deploy documentation
         run: julia --project=docs docs/make.jl
         env:

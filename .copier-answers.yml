@@ -25,11 +25,11 @@ CodeOfConductContact: u.hernandez@hzdr.de
 ConfigIndentation: 2
 JuliaIndentation: 4
 JuliaMinCIVersion: lts
-JuliaMinVersion: '1.10'
+JuliaMinVersion: "1.10"
 License: MIT
 LicenseCopyrightHolders: Uwe Hernandez Acosta
 MarkdownIndentation: 2
-PackageName: MatterModels
+PackageName: ElectronicStructureModels
 PackageOwner: JuliaXRTS
 PackageUUID: 89b7eb7d-0b8d-5078-86d5-4a0f481f2984
 RunJuliaNightlyOnCI: false

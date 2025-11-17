@@ -1,4 +1,4 @@
-module MatterModels
+module ElectronicStructureModels
 
 hello_world() = "Hello, World!"
 

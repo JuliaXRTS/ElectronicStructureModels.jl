@@ -3,7 +3,7 @@ using Random
 using QuadGK
 using Unitful
 
-using MatterModels
+using ElectronicStructureModels
 
 include("checks.jl")
 
@@ -31,10 +31,10 @@ APPROXS = (NoApprox(), NonDegenerated(), Degenerated())
 
 
 @testset "ne = $ne_ccm" for ne_ccm in NES_ccm
-    ne_internal = MatterModels._internalize_density(ne_ccm)
+    ne_internal = ElectronicStructureModels._internalize_density(ne_ccm)
 
-    KF = MatterModels._fermi_wave_vector(ne_internal)
-    EF = MatterModels._fermi_energy_from_kF(KF)
+    KF = ElectronicStructureModels._fermi_wave_vector(ne_internal)
+    EF = ElectronicStructureModels._fermi_energy_from_kF(KF)
     N0 = KF / (2 * pi^2)
 
     OMS = EF .* (0.0, rand(RNG), 1 + rand(RNG), 2 + rand(RNG), 3 + rand(RNG))
@@ -70,7 +70,7 @@ APPROXS = (NoApprox(), NonDegenerated(), Degenerated())
 
                 @testset "rf sanity check" begin
                     groundtruth_imag_rf =
-                        N0 * MatterModels._imag_lindhard_zero_temperature(NoApprox(), om / EF, q / KF)
+                        N0 * ElectronicStructureModels._imag_lindhard_zero_temperature(NoApprox(), om / EF, q / KF)
                     @test isapprox(
                         groundtruth_imag_rf,
                         imag_dynamic_response(test_system, (om, q)),
@@ -78,7 +78,7 @@ APPROXS = (NoApprox(), NonDegenerated(), Degenerated())
                     )
 
                     groundtruth_real_rf =
-                        N0 * MatterModels._real_lindhard_zero_temperature(NoApprox(), om / EF, q / KF)
+                        N0 * ElectronicStructureModels._real_lindhard_zero_temperature(NoApprox(), om / EF, q / KF)
                     @test isapprox(
                         groundtruth_real_rf,
                         real_dynamic_response(test_system, (om, q)),
@@ -113,7 +113,7 @@ APPROXS = (NoApprox(), NonDegenerated(), Degenerated())
     ### Finite temperature
 
     @testset "T = $T_eV" for T_eV in TEMPS_eV
-        T_internal = MatterModels._internalize_temperature.(T_eV)
+        T_internal = ElectronicStructureModels._internalize_temperature.(T_eV)
         @testset "approx = $approx" for approx in APPROXS
 
             test_system = IdealElectronSystem(ne_ccm, T_eV, approx)
@@ -142,7 +142,7 @@ APPROXS = (NoApprox(), NonDegenerated(), Degenerated())
                     end
 
                     @testset "rf sanity check" begin
-                        groundtruth_imag_rf = N0 * MatterModels._imag_lindhard_nonzero_temperature(
+                        groundtruth_imag_rf = N0 * ElectronicStructureModels._imag_lindhard_nonzero_temperature(
                             approx,
                             om / EF,
                             q / KF,
@@ -154,7 +154,7 @@ APPROXS = (NoApprox(), NonDegenerated(), Degenerated())
                             rtol = RTOL,
                         )
 
-                        groundtruth_real_rf = N0 * MatterModels._real_lindhard_nonzero_temperature(
+                        groundtruth_real_rf = N0 * ElectronicStructureModels._real_lindhard_nonzero_temperature(
                             approx,
                             om / EF,
                             q / KF,

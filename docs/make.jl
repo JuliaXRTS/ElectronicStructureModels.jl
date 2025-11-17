@@ -1,7 +1,7 @@
-using MatterModels
+using ElectronicStructureModels
 using Documenter
 
-DocMeta.setdocmeta!(MatterModels, :DocTestSetup, :(using MatterModels); recursive = true)
+DocMeta.setdocmeta!(ElectronicStructureModels, :DocTestSetup, :(using ElectronicStructureModels); recursive = true)
 
 const page_rename = Dict("developer.md" => "Developer docs") # Without the numbers
 const numbered_pages = [
@@ -10,12 +10,12 @@ const numbered_pages = [
 ]
 
 makedocs(;
-    modules = [MatterModels],
+    modules = [ElectronicStructureModels],
     authors = "Uwe Hernandez Acosta <u.hernandez@hzdr.de>",
-    repo = "https://github.com/JuliaXRTS/MatterModels.jl/blob/{commit}{path}#{line}",
-    sitename = "MatterModels.jl",
-    format = Documenter.HTML(; canonical = "https://JuliaXRTS.github.io/MatterModels.jl"),
+    repo = "https://github.com/JuliaXRTS/ElectronicStructureModels.jl/blob/{commit}{path}#{line}",
+    sitename = "ElectronicStructureModels.jl",
+    format = Documenter.HTML(; canonical = "https://JuliaXRTS.github.io/ElectronicStructureModels.jl"),
     pages = ["index.md"; numbered_pages],
 )
 
-deploydocs(; repo = "github.com/JuliaXRTS/MatterModels.jl")
+deploydocs(; repo = "github.com/JuliaXRTS/ElectronicStructureModels.jl", push_preview = true)

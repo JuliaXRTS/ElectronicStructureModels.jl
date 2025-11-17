@@ -9,10 +9,10 @@ body:
 
         Please, before submitting, make sure that:
 
-        - You have checked the [documentation](https://JuliaXRTS.github.io/MatterModels.jl) and haven't found enough information
-        - There is not an [existing issue](https://github.com/JuliaXRTS/MatterModels.jl/issues) with the same question
-        - You have read the [contributing guide](https://JuliaXRTS.github.io/MatterModels.jl/dev/90-contributing/)
-        - You are following the [code of conduct](https://github.com/JuliaXRTS/MatterModels.jl/blob/main/CODE_OF_CONDUCT.md)
+        - You have checked the [documentation](https://JuliaXRTS.github.io/ElectronicStructureModels.jl) and haven't found enough information
+        - There is not an [existing issue](https://github.com/JuliaXRTS/ElectronicStructureModels.jl/issues) with the same question
+        - You have read the [contributing guide](https://JuliaXRTS.github.io/ElectronicStructureModels.jl/dev/90-contributing/)
+        - You are following the [code of conduct](https://github.com/JuliaXRTS/ElectronicStructureModels.jl/blob/main/CODE_OF_CONDUCT.md)
         The form below should help you in filling out this issue.
   - type: textarea
     id: description
