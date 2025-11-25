@@ -2,9 +2,6 @@ module ElectronicStructureModels
 
 hello_world() = "Hello, World!"
 
-# temperature
-export FiniteTemperature, ZeroTemperature
-
 # matter model
 export AbstractMatterModel
 
@@ -51,7 +48,6 @@ using SpecialFunctions
 include("utils.jl")
 include("units.jl")
 include("constants.jl")
-include("temperature.jl")
 include("interface.jl")
 include("generic.jl")
 include("lookup.jl")
