@@ -38,20 +38,27 @@ end
 
 ## Real part
 
-function _general_fermi(x, beta)
-    mu = _chemical_potential_normalized(beta)
-    denom = exp(beta * (x^2 - mu)) + one(beta)
-    return inv(denom)
+function _fermi_prime(x, A, B)
+    return term =
+        return -2 * A * x / (
+        exp(x^2 * A - B) * (exp(-x^2 * A + B) + 1)^2
+    )
 end
 
-function _general_integrand(x, nu, beta)
-    return x * _general_fermi(x, beta) * log(abs(x - nu) / abs(x + nu))
+function _general_integrand(x, A, B)
+    fp = _fermi_prime(x, A, B)
+    return fp * (
+        -x + (1 - x^2) * log(abs(x + 1) / abs(x - 1)) / 2
+    )
 end
 
-function _general_integal(nu, beta)
-    res, _ = quadgk(x -> _general_integrand(x, nu, beta), 0.0, nu, Inf)
+function _general_integral(nu, beta)
+    mu = ElectronicStructureModels._chemical_potential_normalized(beta)
+    A = nu^2 * beta
+    B = beta * mu
+    res, _ = quadgk(x -> _general_integrand(x, A, B), 0.0, 1.0, Inf)
 
-    return res
+    return -nu^2 * res
 end
 
 function _real_lindhard_nonzero_temperature(::NoApprox, ombar, qbar, bbar)
@@ -60,7 +67,7 @@ function _real_lindhard_nonzero_temperature(::NoApprox, ombar, qbar, bbar)
 
     prefac = inv(qbar)
 
-    res = -prefac * (_general_integal(num, bbar) - _general_integal(nup, bbar))
+    res = -prefac * (_general_integral(num, bbar) - _general_integral(nup, bbar))
 
     return res
 end
