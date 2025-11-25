@@ -2,6 +2,9 @@ using Test
 using SafeTestsets
 
 begin
+    @safetestset "Internals" begin
+        include("electron_system/internals.jl")
+    end
     @safetestset "Ideal system" begin
         include("electron_system/ideal.jl")
     end
