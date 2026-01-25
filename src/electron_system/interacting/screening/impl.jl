@@ -18,10 +18,12 @@ Represents the bare Coulomb pseudo potential: V(q) = e² / q².
 """
 struct CoulombPseudoPotential <: AbstractPseudoPotential end
 
-# TODO: insert 4pi!
+# NOTE: in the literature, usually here there is a 4pi, which comes from the vacuum
+# permittivity eps_0 = 1/4pi in atomic units. In natural units used here, eps_0=1.
+# This also aligns with the definition of the DSF (see, e.g., PHYSICAL REVIEW E 78, 026411 2008)
 function _compute(::CoulombPseudoPotential, om_q::NTuple{2, T}) where {T <: Real}
     om, q = om_q
-    return 4 * pi * ELEMENTARY_CHARGE_SQUARED / q^2
+    return ELEMENTARY_CHARGE_SQUARED / q^2
 end
 
 ### screening
