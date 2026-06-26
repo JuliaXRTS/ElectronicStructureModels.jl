@@ -63,7 +63,7 @@ end
 # accessors
 @inline proper_electron_system(elsys::InteractingElectronSystem) = elsys.proper_elec_system
 @inline screening(elsys::InteractingElectronSystem) = elsys.screening
-@inline temperature(elsys::InteractingElectronSystem) =
-    temperature(proper_electron_system(elsys))
-@inline electron_density(elsys::InteractingElectronSystem) =
-    electron_density(proper_electron_system(elsys))
+@inline _temperature(elsys::InteractingElectronSystem) =
+    _temperature(proper_electron_system(elsys))
+@inline _number_density(elsys::InteractingElectronSystem) =
+    _number_density(proper_electron_system(elsys))

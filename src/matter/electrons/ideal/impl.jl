@@ -93,6 +93,6 @@ function IdealElectronSystem(
     return IdealElectronSystem(electron_density, zero(T), approx)
 end
 
-@inline temperature(elsys::IdealElectronSystem) = elsys.temperature
-@inline electron_density(elsys::IdealElectronSystem) = elsys.electron_density
+@inline _temperature(elsys::IdealElectronSystem) = elsys.temperature
+@inline _number_density(elsys::IdealElectronSystem) = elsys.electron_density
 @inline response_approximation(elsys::IdealElectronSystem) = elsys.approx
