@@ -31,12 +31,23 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        version:
-          - "lts"
-          - "1"
-        os:
-          - ubuntu-latest
-          - macOS-latest
-        arch:
-          - x64
-        allow_failure: [false]
+        include:
+          - os: ubuntu-latest
+            arch: x64
+            version: "lts"
+            allow_failure: false
+
+          - os: ubuntu-latest
+            arch: x64
+            version: "1"
+            allow_failure: false
+
+          - os: macos-latest
+            arch: aarch64
+            version: "lts"
+            allow_failure: false
+
+          - os: macos-latest
+            arch: aarch64
+            version: "1"
+            allow_failure: false
