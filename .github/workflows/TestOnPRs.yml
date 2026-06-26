@@ -4,12 +4,6 @@ on:
   pull_request:
     branches:
       - main
-    paths:
-      - "src/**"
-      - "test/**"
-      - "*.toml"
-      - "*.md"
-    types: [opened, synchronize, reopened]
 
 concurrency:
   # Skip intermediate builds: always.
