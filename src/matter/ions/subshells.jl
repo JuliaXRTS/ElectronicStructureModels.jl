@@ -1,12 +1,16 @@
-#abstract type AbstractSubshell end
+abstract type AbstractSubshell end
 
 struct Subshell{S} <: AbstractSubshell
 
-    # consider removing this, because it is not type stable
+    #TODO: consider removing this, because it is not type stable
     function Subshell(s::Symbol)
         return new{s}()
     end
 end
+
+@inline n_value(s::Subshell) = _n_value(s)
+@inline l_value(s::Subshell) = _l_value(s)
+@inline capacity(s::Subshell) = _cap_value(s)
 
 # s1s
 @inline _n_value(::Subshell{:s1s}) = 1
@@ -45,19 +49,17 @@ end
 
 
 # TODO: find better prints
-
 Base.show(io::IO, ::Subshell{S}) where {S} = print(io, string(S))
 function Base.show(io::IO, ::MIME"text/plain", s::Subshell)
     return print(io, "Subshell(n=$(_n_value(s)), l=$(_l_value(s)), cap=$(_cap_value(s)))")
 end
 
-# (n, l, capacity)
-const AUFBAU_SHELLS2 = (
+const AUFBAU_SHELLS = (
     Subshell{:s1s}(),   # 1s
     Subshell{:s2s}(),   # 2s
     Subshell{:s2p}(),   # 2p
     Subshell{:s3s}(),   # 3s
     Subshell{:s3p}(),   # 3p
     Subshell{:s4s}(),   # 4s
-    Subshell{:s3d}(),  # 3d
+    Subshell{:s3d}(),   # 3d
 )
