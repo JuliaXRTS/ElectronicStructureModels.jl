@@ -1,0 +1,3 @@
+
+[pip.deps]
+xdave = "@git+https://github.com/hbellenbaum/xdave.git"

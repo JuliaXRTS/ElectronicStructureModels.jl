@@ -40,6 +40,9 @@ export Subshell
 export n_value, l_value, capacity
 export AUFBAU_SHELLS
 
+export AbstractFormFactor, form_factor
+export PaulingSherman
+
 
 # constants
 export HBARC,
@@ -90,6 +93,7 @@ include("matter/electrons/interacting/impl.jl")
 include("matter/ions/interface.jl")
 include("matter/ions/impl.jl")
 include("matter/ions/subshells.jl")
+include("matter/ions/form_factors/PaulingSherman.jl")
 
 
 end

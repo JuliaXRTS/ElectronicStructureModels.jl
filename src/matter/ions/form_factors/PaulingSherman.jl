@@ -6,7 +6,7 @@ Base.length(::PaulingShermanScreeningTable{N}) where {N} = N
 
 const _PS_C1S = PaulingShermanScreeningTable(1, (0.19,))
 const _PS_C2S = PaulingShermanScreeningTable(2, (1.25, 1.51, 1.78, 2.04, 2.31, 2.57, 2.84, 3.1))
-const _PS_C2P = PaulingShermanScreeningTable(4, Tuple([2.5, 2.91, 3.33, 3.74, 4.16, fill(4.57, ZA - 9)...]))
+const _PS_C2P = PaulingShermanScreeningTable(4, Tuple([2.5, 2.91, 3.33, 3.74, 4.16, fill(4.57, 29)...])) # extent with last element
 const _PS_C3S = PaulingShermanScreeningTable(10, (6.6, 6.96, 7.31, 7.67, 8.03, 8.387, 8.744, 9.1, 9.1, 9.1, 9.28, 9.46, 9.64, 9.82, 10.0, 10.18, 10.36, 10.54, 10.72))
 const _PS_C3P = PaulingShermanScreeningTable(
     12, (
@@ -50,7 +50,7 @@ const _PS_C3D = PaulingShermanScreeningTable(20, (1.47e1, 1.503e1, 1.536e1, 1.56
 ### generic lookup
 @inline function _lookup(t::PaulingShermanScreeningTable, ZA::Int, Zb::Int)
     Base.@boundscheck begin
-        Zb < t.zb_min && return 0.0
+        Zb <= t.zb_min && return 0.0
         Zb > ZA       && return 0.0
     end
 
@@ -67,6 +67,11 @@ end
 @inline _lookup(::Subshell{:s4s}, ZA::Int, Zb::Int) = _lookup(_PS_C4S, ZA, Zb)
 @inline _lookup(::Subshell{:s3d}, ZA::Int, Zb::Int) = _lookup(_PS_C3D, ZA, Zb)
 
+function effective_nuclear_charge(s::Subshell, Z, Zb)
+    return Z - _lookup(s, Z, Zb)
+end
+
+
 ### Taken from Pauling, Sherman
 @inline f10(x) = 1 / (1 + x^2)^2
 
@@ -74,26 +79,30 @@ end
 @inline f20(x) = (1 - 2x^2) * f21(x)
 
 @inline f32(x) = ((1 - 3x^2) * (3 - x^2)) / (3 * (1 + x^2)^6)
-@inline f31(x) = (1 - 4x^2) * f32(x) # differs from xdave
+#@inline f31(x) = (1 - 4x^2) * f32(x) # differs from xdave
+@inline f31(x) = (1 - 6 * x^2 + 3 * x^4) * f32(x) # xdave variant
 @inline f30(x) = (1 - 6x^2 + 3x^4) * f32(x)
 
 @inline f43(x) = ((1 - x^2) * (1 - 6x^2 + x^4)) / (1 + x^2)^8
 @inline f42(x) = (1 - 6x^2) * f43(x)
 @inline f41(x) = (1 - 10x^2 + 10x^4) * f43(x)
-@inline f40(x) = (1 - 12x^2 + 18x^4 - 4x^6) * f43(x) # differs from xdave
+#@inline f40(x) = (1 - 12x^2 + 18x^4 - 4x^6) * f43(x) # differs from xdave
+@inline f40(x) = (1 - 1.2 * x^2 + 18x^4 - 4x^6) * f43(x) # differs from xdave
 
 
-@inline _hydrogenic_ff(s::Subshell2{:s1s}, x) = f10(x)
-@inline _hydrogenic_ff(s::Subshell2{:s2s}, x) = f20(x)
-@inline _hydrogenic_ff(s::Subshell2{:s2p}, x) = f21(x)
-@inline _hydrogenic_ff(s::Subshell2{:s3s}, x) = f30(x)
-@inline _hydrogenic_ff(s::Subshell2{:s3p}, x) = f31(x)
-@inline _hydrogenic_ff(s::Subshell2{:s3d}, x) = f32(x)
-@inline _hydrogenic_ff(s::Subshell2{:s4s}, x) = f40(x)
+@inline _hydrogenic_ff(s::Subshell{:s1s}, x) = f10(x)
+@inline _hydrogenic_ff(s::Subshell{:s2s}, x) = f20(x)
+@inline _hydrogenic_ff(s::Subshell{:s2p}, x) = f21(x)
+@inline _hydrogenic_ff(s::Subshell{:s3s}, x) = f30(x)
+@inline _hydrogenic_ff(s::Subshell{:s3p}, x) = f31(x)
+@inline _hydrogenic_ff(s::Subshell{:s3d}, x) = f32(x)
+@inline _hydrogenic_ff(s::Subshell{:s4s}, x) = f40(x)
 
 function _pauling_sherman_ff(Z, Zb, q)
+
+
     remaining = Zb
-    ff = zero(k)
+    ff = zero(q)
     for s in AUFBAU_SHELLS
         if remaining == 0
             break
