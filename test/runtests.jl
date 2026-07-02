@@ -1,12 +1,6 @@
 using ElectronicStructureModels
 using Test
 
-
-if VERSION < v"1.12"
-    import Pkg
-    Pkg.add(path = "XDaveWrapper")
-end
-
 #=
 Don't add your tests to runtests.jl. Instead, create files named
 
