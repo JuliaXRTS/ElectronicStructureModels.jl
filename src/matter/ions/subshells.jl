@@ -1,12 +1,9 @@
 abstract type AbstractSubshell end
 
-struct Subshell{S} <: AbstractSubshell
+struct Subshell{S} <: AbstractSubshell end
 
-    #TODO: consider removing this, because it is not type stable
-    function Subshell(s::Symbol)
-        return new{s}()
-    end
-end
+#TODO: consider removing this, because it is not type stable
+Subshell(s::Symbol) = Subshell{S}()
 
 @inline n_value(s::Subshell) = _n_value(s)
 @inline l_value(s::Subshell) = _l_value(s)
