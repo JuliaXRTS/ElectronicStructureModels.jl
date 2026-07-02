@@ -41,9 +41,9 @@ jobs:
           arch: ${{ inputs.arch }}
       - name: Install XDaveWrapper
         run: |
-          julia --project=test -e '
+          julia --project=@. -e '
             using Pkg
-            Pkg.add(PackageSpec(path="test/XDaveWrapper"))'
+            Pkg.develop(PackageSpec(path="test/XDaveWrapper"))'
       - name: Use Julia cache
         uses: julia-actions/cache@v3
       - uses: julia-actions/julia-buildpkg@v1
