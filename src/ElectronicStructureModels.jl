@@ -28,6 +28,13 @@ export AbstractResponseApproximation, NoApprox, NonDegenerated, Degenerated, Zer
 export response_approximation
 export InteractingElectronSystem
 
+
+# Plasma Components
+
+export AbstractPlasmaComponent
+export temperature, number_density
+
+
 # Ion System
 
 export AbstractIonSystem
