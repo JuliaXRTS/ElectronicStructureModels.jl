@@ -28,6 +28,22 @@ export AbstractResponseApproximation, NoApprox, NonDegenerated, Degenerated, Zer
 export response_approximation
 export InteractingElectronSystem
 
+# Ion System
+
+export AbstractIonSystem
+export atomic_number, ionization_state, number_bound_electrons
+
+export IonSystem
+export element
+
+export Subshell
+export n_value, l_value, capacity
+export AUFBAU_SHELLS
+
+export AbstractFormFactor, form_factor
+export PaulingSherman
+
+
 # constants
 export HBARC,
     HBARC_eV_ANG,
@@ -44,6 +60,7 @@ using QuadGK
 using Unitful
 using LogExpFunctions
 using SpecialFunctions
+using PeriodicTable
 
 include("deprecated.jl")
 
@@ -72,5 +89,11 @@ include("matter/electrons/interacting/screening/impl.jl")
 include("matter/electrons/interacting/interface.jl")
 include("matter/electrons/interacting/generic.jl")
 include("matter/electrons/interacting/impl.jl")
+
+include("matter/ions/interface.jl")
+include("matter/ions/impl.jl")
+include("matter/ions/subshells.jl")
+include("matter/ions/form_factors/PaulingSherman.jl")
+
 
 end

@@ -1,0 +1,10 @@
+name = "XDaveWrapper"
+uuid = "c6168fab-c598-4eb1-9df8-c7ce52f0079d"
+version = "0.1.0"
+authors = ["Uwe Hernandez Acosta <u.hernandez@hzdr.de>"]
+
+[deps]
+PythonCall = "6099a3de-0909-46bc-b1f4-468b9a2dfc0d"
+
+[compat]
+PythonCall = "0.9.35"

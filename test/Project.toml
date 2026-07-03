@@ -1,6 +1,13 @@
 [deps]
+CondaPkg = "992eb4ea-22a4-4c89-a5bb-47a3300528ab"
+PeriodicTable = "7b2266bf-644c-5ea3-82d8-af4bbd25a884"
+PythonCall = "6099a3de-0909-46bc-b1f4-468b9a2dfc0d"
 QuadGK = "1fd47b50-473d-5c70-9696-f719f8f3bcdc"
 Random = "9a3f8284-a2c9-5f02-9a11-845980a1fd5c"
 SafeTestsets = "1bc83da4-3b8d-516f-aca4-4fe02f6d838f"
 Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
 Unitful = "1986cc42-f94f-5a68-af5c-568840ba703d"
+XDaveWrapper = "c6168fab-c598-4eb1-9df8-c7ce52f0079d"
+
+[sources]
+XDaveWrapper = {path = "XDaveWrapper"}
