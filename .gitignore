@@ -1,6 +1,7 @@
 # Development files
 
 DEV-*
+.ipynb_checkpoints
 
 
 # Non-machine generated gitignore items

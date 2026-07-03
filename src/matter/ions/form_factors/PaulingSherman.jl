@@ -100,7 +100,6 @@ end
 
 function _pauling_sherman_ff(Z, Zb, q)
 
-
     remaining = Zb
     ff = zero(q)
     for s in AUFBAU_SHELLS
