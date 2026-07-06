@@ -5,7 +5,21 @@ hello_world() = "Hello, World!"
 # matter model
 export AbstractMatterModel
 
-# Electron system
+### Plasma
+export AbstactPlasma, AbstractChiharaPlasma
+export electron_system, electron_temperature, electron_density
+export ion_system, ion_temperature, ion_density
+
+# OneComponentPlasma
+export OneComponentPlasma
+
+# Plasma Components
+
+export AbstractPlasmaComponent
+export temperature, number_density
+
+### Electron system
+
 export AbstractElectronSystem
 export temperature, electron_density, imag_dynamic_response, real_dynamic_response
 export fermi_wave_vector,
@@ -29,13 +43,7 @@ export response_approximation
 export InteractingElectronSystem
 
 
-# Plasma Components
-
-export AbstractPlasmaComponent
-export temperature, number_density
-
-
-# Ion System
+### Ion System
 
 export AbstractIonSystem
 export atomic_number, ionization_state, number_bound_electrons
@@ -102,5 +110,8 @@ include("matter/ions/impl.jl")
 include("matter/ions/subshells.jl")
 include("matter/ions/form_factors/PaulingSherman.jl")
 
+include("matter/plasma/interface.jl")
+include("matter/plasma/generic.jl")
+include("matter/plasma/impl.jl")
 
 end

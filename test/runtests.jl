@@ -21,4 +21,4 @@ for (root, dirs, files) in walkdir(@__DIR__)
     end
 end
 =#
-include("test-ion-system.jl")
+include("test-plasma.jl")
