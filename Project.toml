@@ -1,7 +1,7 @@
 name = "ElectronicStructureModels"
 uuid = "89b7eb7d-0b8d-5078-86d5-4a0f481f2984"
-authors = ["Uwe Hernandez Acosta <u.hernandez@hzdr.de>"]
 version = "0.2.1"
+authors = ["Uwe Hernandez Acosta <u.hernandez@hzdr.de>"]
 
 [deps]
 LogExpFunctions = "2ab3a3ac-af41-5b50-aa03-7779005ae688"
@@ -12,7 +12,7 @@ SpecialFunctions = "276daf66-3868-5448-9aa4-cd146d93841b"
 Unitful = "1986cc42-f94f-5a68-af5c-568840ba703d"
 
 [compat]
-LogExpFunctions = "0.3.29"
+LogExpFunctions = "0.3.29, 1"
 PeriodicTable = "1.2.1"
 QEDcore = "0.4"
 QuadGK = "2.11.2"
